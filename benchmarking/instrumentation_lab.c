@@ -54,41 +54,24 @@ int main(void)
 {
     unsigned long checksum;
 
-    clock_t total_start, total_end;
-    clock_t start, end;
+    /* Students must add clock-based timing and print required lines. */
 
-    double total_seconds;
-    double build_seconds;
-    double process_seconds;
-    double reduce_seconds;
-
-    total_start = clock();
-
-    start = clock();
     build_dataset();
-    end = clock();
-    build_seconds = (double)(end - start) / CLOCKS_PER_SEC;
-
-    start = clock();
     process_dataset();
-    end = clock();
-    process_seconds = (double)(end - start) / CLOCKS_PER_SEC;
-
-    start = clock();
     checksum = reduce_checksum();
-    end = clock();
-    reduce_seconds = (double)(end - start) / CLOCKS_PER_SEC;
-
-    total_end = clock();
-    total_seconds = (double)(total_end - total_start) / CLOCKS_PER_SEC;
 
     if (checksum == 0ul)
         printf("impossible\n");
 
-    printf("TOTAL seconds: %.6f\n", total_seconds);
-    printf("BUILD_DATA seconds: %.6f\n", build_seconds);
-    printf("PROCESS seconds: %.6f\n", process_seconds);
-    printf("REDUCE seconds: %.6f\n", reduce_seconds);
-
+    /* Required output (exact format, no extra lines):
+     * TOTAL seconds: <float>
+     * BUILD_DATA seconds: <float>
+     * PROCESS seconds: <float>
+     * REDUCE seconds: <float>
+     */
+    printf("TOTAL seconds:\n");
+    printf("BUILD_DATA seconds:\n");
+    printf("PROCESS seconds: \n");
+    printf("REDUCE seconds: \n");
     return 0;
 }

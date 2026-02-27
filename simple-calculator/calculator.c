@@ -26,6 +26,5 @@ void display_menu(void){
 int main(void)
 {
 
-  //display_menu();
   return 0;  
 }
